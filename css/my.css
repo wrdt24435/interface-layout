@@ -1,0 +1,112 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	border: 0;
+}
+body {
+	  background-color: #ddd;
+}
+.container {
+  width: 1065px;
+  padding-top: 50px;
+  margin: 100px auto;
+  padding: 30px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+}
+.head {
+	/* margin-top: 15px; */
+}
+.head .title {
+	display: inline-block;
+	border: 1px solid red;
+	padding: 3px 16px;
+	margin-right: 15px;
+	color: #e95a44;
+}
+.title.select {
+	background-color: red;
+	color: white;
+}
+.content {
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	//transition: all .8s ease;
+}
+.content figure{
+	margin: 13px 0 0 16px;
+	width: 240px;
+	height: 135px;
+	overflow: hidden;
+	position: relative;
+}
+.content figure:before {
+	position: absolute;/* 需要给伪元素位置和内容，才能显示*/
+	top: 0;
+	left: 0;
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	background: rgba(58, 12, 5, 0);
+	z-index: 4;
+	transition: all .3s;
+	//opacity: 0;
+}
+.content figure:hover:before {
+	//opacity: 1;
+	background: rgba(58, 12, 5, 0.5);
+}
+.content figcaption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  color: white;
+  z-index: -1;
+}
+.content img {
+	width: 0;
+	-webkit-transition: all .5s ease;
+}
+.content figure:hover img {		/*需要figure:hover才能触发 img和figure:before盒子，否则figure会盖住img*/
+  transform: scale(1.1, 1.1);
+}
+.content figure:hover figcaption {		
+  z-index: 5;
+}
+.big_picture {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: none;
+	background-color: rgba(0, 0, 0, .8);	
+	z-index: 8;
+	justify-content: space-between;
+	align-items: center;
+	opacity: 0;
+	transition: all .3s;
+}
+.big_picture img {
+	width: 480px;
+}
+.big_picture div {
+	height: 50px;
+	line-height: 50px;
+	width: 50px;
+	color: white;
+	border: 2px solid white;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 30px;
+}
+.big_picture div:nth-of-type(1) {
+	margin-left: 30px;
+}
+.big_picture div:nth-of-type(2) {
+	margin-right: 30px;
+}
