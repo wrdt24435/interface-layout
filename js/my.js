@@ -160,11 +160,11 @@ const data = [
               let $big_picture = $(".big_picture");
               $content_figure.click( (obj) => {
                   let my_src = obj.target.firstElementChild.getAttribute("src");
-                  console.log(`${my_src}`);
-                  $(".big_picture img").css("src",`${my_src}`);
+                  //console.log(`${my_src}`);
+                 $(".big_picture img").attr("src",`${my_src}`);
                   $big_picture.css("display","flex");
                   setTimeout( () => { $big_picture.css("opacity","1"); });//跑完事件函数后才能显示动画
-                  console.log($(".big_picture img"));
+                  //console.log($(".big_picture img"));
                   $big_picture.click( () => {
                       $big_picture.css("opacity","0");
   
@@ -173,6 +173,7 @@ const data = [
                       }, 300);
                   });
               })
+              //$(".big_picture img").css("src","images/1.jpg");
               //console.log( $(".big_picture div") );
           }
           window.$my_box = my_box;
