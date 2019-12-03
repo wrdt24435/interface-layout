@@ -25,6 +25,9 @@ body {
 	margin-right: 15px;
 	color: #e95a44;
 }
+.head .title:hover {
+	cursor: pointer;
+}
 .title.select {
 	background-color: red;
 	color: white;
@@ -33,14 +36,17 @@ body {
 	margin-top: 10px;
 	display: flex;
 	flex-wrap: wrap;
-	//transition: all .8s ease;
+	/* transition: all .8s ease; */
 }
-.content figure{
+.content figure {
 	margin: 13px 0 0 16px;
 	width: 240px;
 	height: 135px;
 	overflow: hidden;
 	position: relative;
+}
+.content figure:hover {
+	cursor: pointer;
 }
 .content figure:before {
 	position: absolute;/* 需要给伪元素位置和内容，才能显示*/
@@ -52,10 +58,10 @@ body {
 	background: rgba(58, 12, 5, 0);
 	z-index: 4;
 	transition: all .3s;
-	//opacity: 0;
+	/* opacity: 0; */
 }
 .content figure:hover:before {
-	//opacity: 1;
+	/*opacity: 1;*/
 	background: rgba(58, 12, 5, 0.5);
 }
 .content figcaption {
@@ -69,7 +75,7 @@ body {
 }
 .content img {
 	width: 0;
-	-webkit-transition: all .5s ease;
+	-webkit-transition: all .3s ease;
 }
 .content figure:hover img {		/*需要figure:hover才能触发 img和figure:before盒子，否则figure会盖住img*/
   transform: scale(1.1, 1.1);
@@ -109,4 +115,7 @@ body {
 }
 .big_picture div:nth-of-type(2) {
 	margin-right: 30px;
+}
+.big_picture div:hover {
+	cursor: pointer;
 }
